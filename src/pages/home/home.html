@@ -1,0 +1,59 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+<div padding>
+  <ion-segment [(ngModel)]="type">
+    <ion-segment-button value="Home">
+      Home
+    </ion-segment-button>
+    <ion-segment-button value="Office">
+      Office
+    </ion-segment-button>
+    <ion-segment-button value="Vehicle">
+      Vehicle
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div  [ngSwitch]="type">
+  <ion-list  padding *ngSwitchCase="'Home'">
+    <ion-item  (click)="planMove(item)" *ngFor="let item of data">
+      <ion-thumbnail item-start>
+        <img src="{{item.icon_url}}">
+      </ion-thumbnail>
+      <h1>{{item.moves_sub_type_name}}</h1>
+      <h3>{{item.moves_sub_type_description}}</h3>
+    </ion-item>
+  </ion-list>
+
+  <ion-list (click)="planMove(item)" padding *ngSwitchCase="'Office'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+  </ion-list>
+  <ion-list padding  *ngSwitchCase="'Vehicle'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+  </ion-list>
+</div>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "KrazzyMoversApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
